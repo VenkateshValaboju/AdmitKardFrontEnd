@@ -39,7 +39,7 @@ this page consists for three screens 1)Login 2)OTP Verification 3)Success Page
 
 ## Screenshots
 
-<img src="https://i.ibb.co/CHtyj8X/login1.png"/>
+<img src="https://i.ibb.co/CHtyj8X/login1.png" width="200" height="150" />
 
 ## Features
 
