@@ -31,7 +31,10 @@ class Login extends Component {
       body: JSON.stringify(mobileDetails),
     }
 
-    const response = await fetch('http://localhost:3001/get-otp', options)
+    const response = await fetch(
+      'https://admitkart.onrender.com/get-otp',
+      options,
+    )
 
     if (response.ok) {
       const otp = await response.text()

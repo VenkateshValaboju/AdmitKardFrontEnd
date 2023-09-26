@@ -61,8 +61,10 @@ class verifyOTP extends Component {
       },
       body: JSON.stringify(otpDetails),
     }
-
-    const response = await fetch('http://localhost:3001/verify-otp', options)
+    const response = await fetch(
+      'https://admitkart.onrender.com/verify-otp',
+      options,
+    )
     if (response.ok) {
       const {history} = this.props
 
@@ -115,7 +117,10 @@ class verifyOTP extends Component {
       body: JSON.stringify(mobileDetails),
     }
 
-    const response = await fetch('http://localhost:3001/get-otp', options)
+    const response = await fetch(
+      'https://admitkart.onrender.com/get-otp',
+      options,
+    )
     if (response.ok) {
       const otp = await response.text()
       window.alert(`Your OTP: ${otp}`)
