@@ -1,0 +1,23 @@
+.HeaderContainer {
+  width: 100vw;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.time {
+  width: 54px;
+  color: var(--black, #000);
+  text-align: center;
+  font-family: SF Pro Text;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.3px;
+}
+.iconHeader {
+  margin-right: 9px;
+}

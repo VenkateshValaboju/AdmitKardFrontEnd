@@ -1,0 +1,98 @@
+.VerifyPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.VerifyHeading {
+  color: #333;
+  font-family: Work Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.VerifyPara {
+  color: #666;
+  font-family: Work Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.MobileNo {
+  color: #333;
+  font-family: Work Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.changeNumber {
+  color: #f7b348;
+  font-family: Work Sans;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background-color: transparent;
+  border-style: none;
+  text-decoration: underline;
+}
+.OTPContainer {
+  display: flex;
+  flex-direction: row;
+}
+.box {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  margin-right: 20px;
+  color: #333;
+  font-family: Work Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+}
+.question {
+  color: #999;
+  font-family: Work Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.resendButton {
+  color: #f7b348;
+  font-family: Work Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-style: none;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.verifyButton {
+  width: 224px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 100px;
+  background: #f7b348;
+  color: #fff;
+  text-align: center;
+  font-family: Work Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-style: none;
+}
+.verifyImage {
+  width: 131.518px;
+  height: 138.015px;
+  flex-shrink: 0;
+  margin-top: 45px;
+}
