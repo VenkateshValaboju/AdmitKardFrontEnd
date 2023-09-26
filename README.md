@@ -1,55 +1,88 @@
-# Express OTP Verification API
+AdmitKard - Exercise - b [OTP Verification]-Front_END
 
-This is a simple Express.js API for generating and verifying OTPs (One-Time Passwords) for mobile number verification. It provides two endpoints: one for generating OTPs and another for verifying them.
+This React application showcases a common user authentication flow, where users enter their mobile number, verify it with an OTP, and are then redirected to a success page. Here's a brief overview of the application structure:
 
-## Prerequisites
+- **Login:** Users input their mobile number and request an OTP.
 
-Before running this API, make sure you have the following installed:
+- **VerifyOTP:** Users enter the OTP received on their mobile to verify their identity.
 
-## Installation
+- **SuccessPage:** After successful verification, users are welcomed to the application.
 
-1. Install the required dependencies:
+## Components
 
-   ```bash
-   npm install
-   ```
+### Login
 
-## Usage
+The Login component handles the user's input of their mobile number. It validates the number and, if valid, requests an OTP from the server.
 
-1. Start the Express server:
+### VerifyOTP
 
-   ```bash
-   node app.js
-   ```
+The VerifyOTP component allows users to enter the OTP sent to their mobile. It verifies the OTP with the server and redirects to the SuccessPage upon success.
 
-   The server will run on `http://localhost:3001`.
+### SuccessPage
 
-2. Generate OTP for a Mobile Number:
+The SuccessPage component displays a welcome message and potentially other instructions or actions to the user. Users are redirected to this page after successfully verifying their mobile number.
 
-   - **Endpoint**: `POST /get-otp`
-   - **Request Body**:
+## Routing
 
-     ```json
-     {
-       "mobileNumber": "<mobile-number>"
-     }
-     ```
+Routing in this application is managed using React Router. Here's how the routes are configured:
 
-     Replace `<mobile-number>` with the desired mobile number for which you want to generate an OTP.
+- The default route ("/") redirects to the login page.
+- "/login" displays the Login component.
+- "/verify-otp" displays the VerifyOTP component.
+- "/success" displays the SuccessPage component.
 
-   - **Response**: The API will generate a random OTP and return it as a response.
+The `Switch` component ensures that only one route is rendered at a time.
 
-3. Verify OTP:
+this page consists for three screens 1)Login 2)OTP Verification 3)Success Page
 
-   - **Endpoint**: `POST /verify-otp`
-   - **Request Body**:
+### Screen 1 - Login Page
 
-     ```json
-     {
-       "enteredOTP": "<otp-to-verify>"
-     }
-     ```
+## Screenshots
 
-     Replace `<otp-to-verify>` with the OTP you want to verify.
+<img src="https://i.ibb.co/CHtyj8X/login1.png"/>
 
-   - **Response**: If the provided OTP matches the previously generated OTP, the API will respond with "Verified." If the OTP is incorrect, it will respond with a 400 status and "Incorrect."
+## Features
+
+- User-friendly interface for mobile number input.
+- Mobile number validation with a 10-digit number requirement.
+- Requesting an OTP from the backend via an API POST request.
+- Displaying the OTP to the user in an alert message.
+- Seamless navigation to the next page after OTP confirmation.
+
+### Screen 2 - Verify OTP
+
+This page is responsible for verifying the OTP sent to the user's mobile number.
+
+## Screenshots
+
+![Verify OTP Page](/screenshots/verify-otp-page.png)
+
+## Features
+
+- **Change Phone Number:** Clicking on "Change Phone Number" redirects the user back to the login page to change their phone number.
+
+- **Resend OTP:** Clicking "Resend" triggers a new OTP request from the backend. The newly generated OTP is displayed in an alert message.
+
+- **Verify OTP:** Clicking "Verify" sends an API request to validate the OTP entered by the user. If the OTP matches the original OTP, the user is redirected to the success page. Otherwise, an alert message is displayed.
+
+- **Mobile Number Validation:** The user cannot access the Verify OTP page without entering a valid mobile number. If the user attempts to do so, they will be redirected to the login page.
+
+### Screen 3 - Success Page
+
+The Success Page component serves as a user interface to welcome users to your application and potentially provide additional instructions or actions. In this implementation, the page includes a welcome message, a brief description, and a submit button. The user is redirected to this page after successfully verifying their mobile number with an OTP.
+
+## Screenshots
+
+![Success Page](/screenshots/success-page.png)
+
+## Features
+
+- **Automatic Redirection:** The Success Page component includes automatic redirection logic. If the user tries to access this page without completing the OTP verification process (no OTP in the state), they will be automatically redirected to the login page.
+
+- **Welcome Message:** Users are greeted with a welcome message, creating a positive user experience.
+
+- **Description:** A brief description informs users about the purpose of the page, potentially setting expectations or providing context.
+
+- **Submit Button:** The "Submit" button may trigger further actions or navigate users to different parts of your application.
+
+- **Estimated Time:** A message informs users that the process will take only 5 minutes, helping manage user expectations.

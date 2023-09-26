@@ -37,7 +37,6 @@ class Login extends Component {
       const otp = await response.text()
       window.alert(`Your OTP: ${otp}`)
       const {history} = this.props
-
       history.replace({
         pathname: '/verify-otp',
         state: {mobile},
