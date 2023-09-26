@@ -39,7 +39,9 @@ this page consists for three screens 1)Login 2)OTP Verification 3)Success Page
 
 ## Screenshots
 
-<img src="https://i.ibb.co/CHtyj8X/login1.png" width="400" height="800" />
+<img src="https://i.ibb.co/CHtyj8X/login1.png" width="400" height="650" />
+<img src="https://i.ibb.co/0ZZ7Rts/login2.png" width="650" height="400">
+OTP received
 
 ## Features
 
@@ -55,7 +57,11 @@ This page is responsible for verifying the OTP sent to the user's mobile number.
 
 ## Screenshots
 
-![Verify OTP Page](/screenshots/verify-otp-page.png)
+<img src="https://i.ibb.co/v1WsXZD/verifypage1.png" width="400" height="650"/>
+
+<img src="https://i.ibb.co/DK8pvjm/verify-page2.png" width="650" height="400">
+
+<img src="https://i.ibb.co/yYszL8g/verifypage3.png" width="650" height="400">
 
 ## Features
 
@@ -73,7 +79,7 @@ The Success Page component serves as a user interface to welcome users to your a
 
 ## Screenshots
 
-![Success Page](/screenshots/success-page.png)
+<img src="https://i.ibb.co/GVrBH3B/successpage1.png" width="400" height="650" />
 
 ## Features
 
