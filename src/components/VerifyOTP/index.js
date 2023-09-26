@@ -1,4 +1,5 @@
 import {Component} from 'react'
+import {Redirect} from 'react-router-dom'
 import Header from '../Header'
 import './index.css'
 
@@ -10,6 +11,7 @@ class verifyOTP extends Component {
     digit4: '',
     enteredOTP: '',
     mobile: '',
+    stay: true,
   }
 
   componentDidMount() {
@@ -17,11 +19,17 @@ class verifyOTP extends Component {
   }
 
   getTheMobileNumber() {
-    const {location} = this.props
-    const {mobile} = location.state
-    this.setState({
-      mobile,
-    })
+    try {
+      const {location} = this.props
+      const {mobile} = location.state
+      this.setState({
+        mobile,
+      })
+    } catch (error) {
+      this.setState({
+        stay: false,
+      })
+    }
   }
 
   submitOTP = event => {
@@ -56,11 +64,12 @@ class verifyOTP extends Component {
 
     const response = await fetch('http://localhost:3001/verify-otp', options)
     if (response.ok) {
-      const {history, location} = this.props
-      const {mobile} = location.state
-      history.replace('/success')
-      const data = await response.text()
-      console.log(data)
+      const {history} = this.props
+
+      history.replace({
+        pathname: '/success',
+        state: {enteredOTP},
+      })
     } else {
       alert('Incorrect OTP')
     }
@@ -96,9 +105,9 @@ class verifyOTP extends Component {
   }
 
   getTheResponse = async () => {
+    const {mobile} = this.state
     const mobileDetails = {
-      country: 'IN',
-      mobile: '123456789',
+      mobile,
     }
 
     const options = {
@@ -114,10 +123,11 @@ class verifyOTP extends Component {
   }
 
   render() {
-    const {mobile} = this.state
+    const {mobile, stay} = this.state
 
     return (
       <form onSubmit={this.submitOTP}>
+        {!stay && <Redirect to="/login" />}
         <Header />
         <div className="VerifyPage">
           <svg
@@ -352,7 +362,7 @@ class verifyOTP extends Component {
           </svg>
           <p className="VerifyHeading">Please verify Mobile number</p>
           <p className="VerifyPara">
-            An OTP is sent to <span className="MobileNo">{mobile}</span>
+            An OTP is sent to <span className="MobileNo">+91 {mobile}</span>
           </p>
           <button
             type="button"
